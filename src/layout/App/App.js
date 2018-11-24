@@ -1,25 +1,51 @@
 import React, { Component } from 'react';
-import logo from './../../logo.svg';
-import './App.css';
+import { DataTable } from '../../components/index';
+import MenuApp from './MenuApp';
+import PostManager from './PostManager';
+import axios from 'axios';
+
+const templateFuncion = (a) => a;
+
+const columnsConfig = [
+  { 'field': 'userId', 'label': 'userId', 'template': templateFuncion },
+  { 'field': 'id', 'label': 'id', 'template': templateFuncion },
+  { 'field': 'title', 'label': 'title', 'template': templateFuncion },
+  { 'field': 'body', 'label': 'body', 'template': templateFuncion },
+];
+
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = { posts: [], post: '' };
+    this.addPost = this.addPost.bind(this);
+    this.getPosts();
+
+  }
+
+  getPosts() {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(res => {
+        this.setState({ posts: res.data });
+        // console.log(JSON.stringify(this.state.posts));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  addPost(post) {
+    this.setState({ post });
+    console.log(this.state.post);
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <MenuApp />
+
+        <PostManager />
+        {/* <DataTable columns={columnsConfig} rows={this.state.posts} /> */}
       </div>
     );
   }
