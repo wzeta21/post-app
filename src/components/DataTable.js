@@ -26,7 +26,7 @@ const DataTable = ({ columns, rows }) => (
     </Table>
 );
 
-DataTable.PropTypes = {
+DataTable.propTypes = {
     columns: PropTypes.arrayOf(PropTypes.shape({
         field: PropTypes.string,
         label: PropTypes.string,
