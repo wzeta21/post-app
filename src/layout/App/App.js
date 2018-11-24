@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { DataTable } from '../../components/index';
+import {UserForm} from '../../components/index';
 import MenuApp from './MenuApp';
 import PostManager from './PostManager';
 import axios from 'axios';
 
 const templateFuncion = (a) => a;
 
-const columnsConfig = [
-  { 'field': 'userId', 'label': 'userId', 'template': templateFuncion },
-  { 'field': 'id', 'label': 'id', 'template': templateFuncion },
-  { 'field': 'title', 'label': 'title', 'template': templateFuncion },
-  { 'field': 'body', 'label': 'body', 'template': templateFuncion },
-];
+// const columnsConfig = [
+//   { 'field': 'userId', 'label': 'userId', 'template': templateFuncion },
+//   { 'field': 'id', 'label': 'id', 'template': templateFuncion },
+//   { 'field': 'title', 'label': 'title', 'template': templateFuncion },
+//   { 'field': 'body', 'label': 'body', 'template': templateFuncion },
+// ];
 
 
 class App extends Component {
@@ -43,8 +43,8 @@ class App extends Component {
     return (
       <div className="App">
         <MenuApp />
-
         <PostManager />
+        <UserForm />
         {/* <DataTable columns={columnsConfig} rows={this.state.posts} /> */}
       </div>
     );

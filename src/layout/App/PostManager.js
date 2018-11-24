@@ -72,7 +72,7 @@ class PostManager extends Component {
                 </Card>
                 
                 {/* <DataTable columns={columnsConfig} rows={this.state.comments} /> */}
-                {'Comments'}
+                <label>Components</label>
                 
                 <Accordion fluid styled panels={this.state.comments} />
 
