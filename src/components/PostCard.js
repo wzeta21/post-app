@@ -4,7 +4,7 @@ import { Card, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const PostCard = ({ post }) => (
-    <Card fluid styled>
+    <Card fluid styled='teal'>
         <Card.Content header={post.text} />
         <Card.Content description={[post.body]} />
         <Card.Content extra>

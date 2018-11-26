@@ -38,7 +38,7 @@ class PostManager extends Component {
         axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
             .then(res => {
                 const com = res.data.map(({ postId, id, name, email, body }) => ({
-                    title: email, content: body
+                    postId, id, name, title: email, content: body
                 }));
                 this.setState({ comments: com });
             })
@@ -63,9 +63,9 @@ class PostManager extends Component {
                 />
                 <PostCard post={this.state.post} />
                 <label>Components</label>
-                <Accordion fluid styled panels={this.state.comments} />
-                {console.log('Selected post: ', this.state.post)}
-                {console.log('Post comments: ', this.state.comments)}
+                <Accordion panels={this.state.comments} />
+                {/* {console.log('Selected post: ', this.state.post)}
+                {console.log('Post comments: ', this.state.comments)} */}
             </Segment>
         );
     }

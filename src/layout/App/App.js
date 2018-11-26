@@ -5,7 +5,7 @@ import MenuApp from './MenuApp';
 import Main from './Main';
 import { Container } from 'semantic-ui-react';
 
-import axios from 'axios';
+// import axios from 'axios';
 
 // const templateFuncion = (a) => a;
 
@@ -23,21 +23,21 @@ class App extends Component {
     super();
     this.state = { posts: [], post: '' };
     // this.addPost = this.addPost.bind(this);
-    this.getPosts();
+    // this.getPosts();
   }
 
-  getPosts() {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(res => {
-        const pos = res.data.map(({ userId, id, title, body }) => ({
-          userId, key: id, value: id, text: title, body
-        }));
-        this.setState({ posts: pos });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+  // getPosts() {
+  //   axios.get('https://jsonplaceholder.typicode.com/posts')
+  //     .then(res => {
+  //       const pos = res.data.map(({ userId, id, title, body }) => ({
+  //         userId, key: id, value: id, text: title, body
+  //       }));
+  //       this.setState({ posts: pos });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }
   // addPost(post) {
   //   this.setState({ post });
   //   console.log(this.state.post);
@@ -52,7 +52,6 @@ class App extends Component {
         {/* <PostManager />
         <UserForm /> */}
         {/* <PostsDDL options={this.state.posts} */}
-        
         {/* <DataTable columns={columnsConfig} rows={this.state.posts} /> */}
       </div>
     );
