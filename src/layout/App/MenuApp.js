@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Menu } from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 
 export default class MenuApp extends Component {
   state = {}
@@ -11,8 +12,7 @@ export default class MenuApp extends Component {
 
     return (
       <Menu color='teal'>
-        <Menu.Item
-          
+        <Menu.Item as={Link} to='/'          
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}

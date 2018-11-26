@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Dropdown, Segment, Accordion } from 'semantic-ui-react';
-import { DataTable } from '../../components/index';
 import { Card, Icon } from 'semantic-ui-react';
-
 import axios from 'axios';
+import {PostCard} from './index';
 
 const columnsConfig = [
     { 'field': 'id', 'label': '', 'template': () => <Icon name='user' /> },
@@ -62,18 +61,11 @@ class PostManager extends Component {
                         this.getPostComents(value);
                     }}
                 />
-                <Card fluid styled>
-                    <Card.Content header={this.state.post.text} />
-                    <Card.Content description={[this.state.post.body]} />
-                    <Card.Content extra>
-                        <Icon name='user' to='/home' />
-                        Autor
-                    </Card.Content>
-                </Card>
-                
+                <PostCard post={this.state.post}/>
+
                 {/* <DataTable columns={columnsConfig} rows={this.state.comments} /> */}
                 <label>Components</label>
-                
+
                 <Accordion fluid styled panels={this.state.comments} />
 
                 {console.log('Selected post: ', this.state.post)}
@@ -82,5 +74,4 @@ class PostManager extends Component {
         );
     }
 }
-
 export default PostManager;

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 //   const { key } = data.options.find(o => o.value === value);
 //   return key;
 // }
-const handleChanges = (addPost, { target: { value } }) => addPost(value);
+const handleChanges = (addPost, ac) => console.log(ac);
 
 const PostsDDL = ({ options = [], addPost }) => {
   //console.log(JSON.stringify(post));
@@ -28,7 +28,7 @@ const PostsDDL = ({ options = [], addPost }) => {
   />
 };
 
-PostsDDL.PropTypes = {
+PostsDDL.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,
     value: PropTypes.string,
