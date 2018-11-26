@@ -12,7 +12,6 @@ const PostCard = ({ post }) => (
                 <Icon name='user' />
                 Autor
             </Link>
-
         </Card.Content>
     </Card >
 );

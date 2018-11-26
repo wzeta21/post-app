@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Segment } from 'semantic-ui-react'
+import { Form, Segment, Label } from 'semantic-ui-react'
 import axios from 'axios';
 
 
@@ -7,25 +7,27 @@ class UserForm extends Component {
 
     constructor(userId) {
         super(userId);
-        this.state = { user: {} };
+        this.state = { user: {}, companyname: '' };
         this.getUser(1);
     }
     getUser(userId) {
         axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
             .then(res => {
                 this.setState({ user: res.data });
-                console.log('user: ', this.state.user)
+                this.setState({ companyname: res.data.company.name });
             })
             .catch((error) => {
                 console.log(error);
             });
     }
     render() {
-        const {name, username, email, phone, website, company} = this.state.user;
+        const { name, username, email, phone, website } = this.state.user;
         return (
             <Segment>
-                <Form>                    
-                    <label>{name}</label>
+                <Form>
+                    <Label color='teal'>
+                        {name}
+                    </Label>
                     <Form.Group widths='equal'>
                         <Form.Field>
                             <label>Username</label>
@@ -49,7 +51,7 @@ class UserForm extends Component {
                     <Form.Group fluid widths='equal'>
                         <Form.Field>
                             <label>Company</label>
-                            <input fluid value={JSON.stringify(company)} placeholder='Company' />
+                            <input fluid value={this.state.companyname} placeholder='Company' />
                         </Form.Field>
                     </Form.Group>
                 </Form>
