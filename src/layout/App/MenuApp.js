@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class MenuApp extends Component {
   state = {}
@@ -12,7 +12,7 @@ export default class MenuApp extends Component {
 
     return (
       <Menu color='teal'>
-        <Menu.Item as={Link} to='/'          
+        <Menu.Item as={Link} to='/'
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
@@ -20,7 +20,7 @@ export default class MenuApp extends Component {
           HOME
         </Menu.Item>
 
-        <Menu.Item name='reviews' active={activeItem === 'reviews'} onClick={this.handleItemClick}>
+        <Menu.Item name='reviews' as={Link} to='/userform' active={activeItem === 'reviews'} onClick={this.handleItemClick}>
           ABOUT AS
         </Menu.Item>
 

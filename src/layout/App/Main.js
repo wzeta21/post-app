@@ -6,7 +6,7 @@ const Main = () => (
     <main>
         <Switch>
             <Route exact path='/' component={PostManager} />
-            <Route exact path='/userform:id' component={UserForm} />
+            <Route exact path='/userform/:id' component={UserForm} />
         </Switch>
     </main>
 );

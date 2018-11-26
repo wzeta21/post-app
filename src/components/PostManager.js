@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Dropdown, Segment, Accordion } from 'semantic-ui-react';
-import { Card, Icon } from 'semantic-ui-react';
+// import { Card, Icon } from 'semantic-ui-react';
 import axios from 'axios';
-import {PostCard} from './index';
+import { PostCard } from './index';
 
-const columnsConfig = [
-    { 'field': 'id', 'label': '', 'template': () => <Icon name='user' /> },
-    {
-        'field': 'body', 'label': '', 'template': ({ email, body }) => <Card>
-            <Card.Content header={email} />
-            <Card.Content description={[body]} />
-        </Card>
-    }
-];
+// const columnsConfig = [
+//     { 'field': 'id', 'label': '', 'template': () => <Icon name='user' /> },
+//     {
+//         'field': 'body', 'label': '', 'template': ({ email, body }) => <Card>
+//             <Card.Content header={email} />
+//             <Card.Content description={[body]} />
+//         </Card>
+//     }
+// ];
 
 class PostManager extends Component {
 
@@ -61,13 +61,9 @@ class PostManager extends Component {
                         this.getPostComents(value);
                     }}
                 />
-                <PostCard post={this.state.post}/>
-
-                {/* <DataTable columns={columnsConfig} rows={this.state.comments} /> */}
+                <PostCard post={this.state.post} />
                 <label>Components</label>
-
                 <Accordion fluid styled panels={this.state.comments} />
-
                 {console.log('Selected post: ', this.state.post)}
                 {console.log('Post comments: ', this.state.comments)}
             </Segment>

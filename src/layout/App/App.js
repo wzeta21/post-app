@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import MenuApp from './MenuApp';
-import { PostManager, UserForm } from '../../components/index';
+// import { PostManager, UserForm } from '../../components/index';
+// import { PostsDDL } from '../../components';
 import Main from './Main';
 import { Container } from 'semantic-ui-react';
-import { PostsDDL } from '../../components';
+
 import axios from 'axios';
 
-const templateFuncion = (a) => a;
+// const templateFuncion = (a) => a;
 
 // const columnsConfig = [
 //   { 'field': 'userId', 'label': 'userId', 'template': templateFuncion },
@@ -45,11 +46,11 @@ class App extends Component {
     return (
       <div className="App">
         <MenuApp />
-        {/* <Container>
+        <Container>
           <Main />
-        </Container> */}
-        <PostManager />
-        <UserForm />
+        </Container>
+        {/* <PostManager />
+        <UserForm /> */}
         {/* <PostsDDL options={this.state.posts} */}
         
         {/* <DataTable columns={columnsConfig} rows={this.state.posts} /> */}
