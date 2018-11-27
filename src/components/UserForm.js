@@ -8,6 +8,9 @@ class UserForm extends Component {
     constructor(userId) {
         super(userId);
         this.state = { user: {}, companyname: '' };
+
+    }
+    componentDidMount() {
         this.getUser(this.props.match.params.id);
     }
     getUser(userId) {
@@ -31,27 +34,27 @@ class UserForm extends Component {
                     <Form.Group widths='equal'>
                         <Form.Field>
                             <label>Username</label>
-                            <input fluid={'true'} value={username} placeholder='Username' type='text' onChange={()=>{}}/>
+                            <input fluid={'true'} value={username} placeholder='Username' type='text' onChange={() => { }} />
                         </Form.Field>
                         <Form.Field>
                             <label>Email</label>
-                            <input fluid={'true'} value={email} placeholder='Email' readOnly type='text' onChange={()=>{}}/>
+                            <input fluid={'true'} value={email} placeholder='Email' readOnly type='text' onChange={() => { }} />
                         </Form.Field>
                     </Form.Group>
                     <Form.Group fluid={'true'} widths='equal'>
                         <Form.Field>
                             <label>Phone</label>
-                            <input fluid={'true'} value={phone} placeholder='Phone' readOnly type='text' onChange={()=>{}}/>
+                            <input fluid={'true'} value={phone} placeholder='Phone' readOnly type='text' onChange={() => { }} />
                         </Form.Field>
                         <Form.Field>
                             <label>Website</label>
-                            <input fluid={'true'} value={website} placeholder='Website' readOnly type='text' onChange={()=>{}}/>
+                            <input fluid={'true'} value={website} placeholder='Website' readOnly type='text' onChange={() => { }} />
                         </Form.Field>
                     </Form.Group>
                     <Form.Group fluid={'true'} widths='equal'>
                         <Form.Field>
                             <label>Company</label>
-                            <input fluid={'true'} value={this.state.companyname} placeholder='Company' readOnly type='text' onChange={()=>{}}/>
+                            <input fluid={'true'} value={this.state.companyname} placeholder='Company' readOnly type='text' onChange={() => { }} />
                         </Form.Field>
                     </Form.Group>
                 </Form>
