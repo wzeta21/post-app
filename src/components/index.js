@@ -1,9 +1,9 @@
 import DataTable from './DataTable';
 import AddUser from './AddUser';
-import Users from './Users';
 import PostsDDL from './PostsDDL';
 import UserForm from './UserForm';
 import PostManager from './PostManager';
 import PostCard from './PostCard';
+import MenuApp from './MenuApp';
 
-export { DataTable, AddUser, Users, PostsDDL, UserForm, PostManager, PostCard };
+export { DataTable, AddUser, PostsDDL, UserForm, PostManager, PostCard, MenuApp };

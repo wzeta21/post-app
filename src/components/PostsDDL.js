@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const handleChanges = (addPost, { target  }) => { addPost(target) }
+const handleChanges = (addPost, { target }) => { addPost(target) }
 
 const PostsDDL = ({ options = [], addPost }) => {
   const pos = options.map(({ key, value, text }) => ({

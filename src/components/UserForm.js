@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Form, Segment, Label } from 'semantic-ui-react'
 import axios from 'axios';
 
-
 class UserForm extends Component {
 
     constructor(userId) {

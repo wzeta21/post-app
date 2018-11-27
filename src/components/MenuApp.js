@@ -19,18 +19,6 @@ export default class MenuApp extends Component {
         >
           HOME
         </Menu.Item>
-
-        <Menu.Item name='reviews' as={Link} to='/userform' active={activeItem === 'reviews'} onClick={this.handleItemClick}>
-          ABOUT AS
-        </Menu.Item>
-
-        <Menu.Item
-          name='upcomingEvents'
-          active={activeItem === 'upcomingEvents'}
-          onClick={this.handleItemClick}
-        >
-          CONTACT AS
-        </Menu.Item>
       </Menu>
     )
   }
