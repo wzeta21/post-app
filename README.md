@@ -12,7 +12,7 @@ Clone the project, in the project directory, you can run:
 
 ### `yarn install`
 
-After that run:
+After that, run:
 
 ### `yarn start`
 
