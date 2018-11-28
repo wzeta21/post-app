@@ -1,6 +1,6 @@
 # REACT PROJECT
 
-This project was created to practice react, to improve my skills as a software developer.
+This project was created to practice react, to improve my skills as a software developer. It is also my first adventure with react
 
 This application consumes an api [https://jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com), when a post is selected, shows selected post title, content and comments, also show the post owner details
 
