@@ -7,7 +7,6 @@ class UserForm extends Component {
     constructor(userId) {
         super(userId);
         this.state = { user: {}, companyname: '' };
-
     }
     componentDidMount() {
         this.getUser(this.props.match.params.id);

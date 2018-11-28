@@ -1,3 +1,9 @@
+# REACT PROJECT
+
+This project was created to practice react, to improve my skills as a software developer.
+
+This application consumes an api [https://jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com), This application consumes the api, when a post is selected, shows selected post title, content and comments, also show the post owner details
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
