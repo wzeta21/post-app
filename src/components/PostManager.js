@@ -39,10 +39,9 @@ class PostManager extends Component {
             });
     }
     addPost(id) {
-        // this.setState({ post: {}, comments: [] })
         const postFound = this.state.posts.find(item => item.key === id)
         this.getPostComents(postFound.userId);
-        this.setState({ post:  postFound})        
+        this.setState({ post: postFound })
     }
     render() {
         return (
