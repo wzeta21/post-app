@@ -38,9 +38,9 @@ class PostManager extends Component {
                 console.log(error);
             });
     }
-    addPost(target) {
+    addPost(id) {
         this.setState({ post: {}, comments: [] })
-        this.setState({ post: this.state.posts.find(item => item.text === target.textContent) })
+        this.setState({ post: this.state.posts.find(item => item.key === id) })
         this.getPostComents(this.state.post.userId);
     }
     render() {
