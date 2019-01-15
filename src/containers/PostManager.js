@@ -51,7 +51,7 @@ class PostManager extends Component {
                     addPost={this.addPost}
                 />{
                     this.state.post && (<Fragment><PostCard post={this.state.post} />
-                        <label>Components</label>
+                        <label>Comments</label>
                         <Accordion panels={this.state.comments} /></Fragment>)
                 }
             </Segment>
