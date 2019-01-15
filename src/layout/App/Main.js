@@ -1,5 +1,5 @@
 import React from 'react';
-import { PostManager, UserForm } from '../../components/index';
+import { PostManager, UserForm } from '../../containers';
 import { Route, Switch } from 'react-router-dom';
 
 const Main = () => (

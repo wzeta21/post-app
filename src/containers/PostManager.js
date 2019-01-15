@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Segment, Accordion } from 'semantic-ui-react';
 import axios from 'axios';
-import { PostCard, PostsDDL } from './index';
+import { PostCard, PostsDDL } from '../components';
 
 class PostManager extends Component {
 
     constructor() {
         super();
-        this.state = { post: {}, posts: [], comments: [] };
+        this.state = { post: null, posts: [], comments: [] };
         this.addPost = this.addPost.bind(this);
     }
     componentDidMount() {
@@ -38,10 +38,10 @@ class PostManager extends Component {
                 console.log(error);
             });
     }
-    addPost(target) {
-        this.setState({ post: {}, comments: [] })
-        this.setState({ post: this.state.posts.find(item => item.text === target.textContent) })
-        this.getPostComents(this.state.post.userId);
+    addPost(id) {
+        const postFound = this.state.posts.find(item => item.key === id)
+        this.getPostComents(postFound.userId);
+        this.setState({ post: postFound })
     }
     render() {
         return (
@@ -49,10 +49,11 @@ class PostManager extends Component {
                 <PostsDDL
                     options={this.state.posts}
                     addPost={this.addPost}
-                />
-                <PostCard post={this.state.post} />
-                <label>Components</label>
-                <Accordion panels={this.state.comments} />
+                />{
+                    this.state.post && (<Fragment><PostCard post={this.state.post} />
+                        <label>Comments</label>
+                        <Accordion panels={this.state.comments} /></Fragment>)
+                }
             </Segment>
         );
     }
