@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MenuApp } from '../../components/index';
+import { MenuApp } from '../../containers';
 import Main from './Main';
 import { Container } from 'semantic-ui-react';
 
