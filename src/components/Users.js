@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Users = ({ users }) => (
-    <ul>
-        {users.map(({ name, key }) => (
-            <li key={key}>{name}</li>
-        ))}
-    </ul>
+const Users = ({ users }) => ( 
+   <ul> {
+        users.map(({ name, key }) => ( 
+	   <li key = { key } > { name } </li>
+        ))} 
+  </ul>
 );
 
-Users.PropTypes = {
+Users.propTypes = {
     users: PropTypes.array
 };
 
